@@ -1,15 +1,19 @@
 source :rubygems
+
 gem 'sinatra'
-gem 'activerecord'
-gem 'sinatra-activerecord'
-gem 'pg'
+gem "activerecord"
+gem "sinatra-activerecord"
+gem 'pg', '~> 0.18'
 gem 'rake'
 
 group :development do
-	gem 'tux'
+ gem "tux"
 end
 
 group :test do
-	gem 'rack-test', require: 'rake/test'
-	gem 'rspec'
+  gem "rack-test", require: "rack/test"
+  gem "rspec"
+  gem "factory_girl", "~> 4.0"
+  gem "ffaker"
+  gem 'database_cleaner'
 end
