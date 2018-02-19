@@ -8,6 +8,6 @@ class Faq < ActiveRecord::Base
   has_many :hashtags, through: :faq_hashtags
   belongs_to :company
 
-  # include PgSearch
+  #include PgSearch
   pg_search_scope :search, :against => [:question, :answer]
 end
