@@ -18,7 +18,7 @@ describe LinkModule::CreateService do
     end
 
     it "With valid params, receive success message" do
-      @createService = LinkModule::CreateService.new({"description.original" => @description, "link.original" => @link})
+      @createService = LinkModule::CreateService.new({"description.original" => @description, "link.original" => @link, "hashtags.original" => @hashtags})
 
       response = @createService.call()
       expect(response).to match("Criado com sucesso")

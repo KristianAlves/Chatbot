@@ -4,13 +4,13 @@ module LinkModule
       # TODO: identify origin and set company
       @company = Company.last
       @action = action
-      @query = params["query"]
+      @query = params["query_link"]
     end
 
     def call
-      if @action == "search"
+      if @action == "search_link"
         links = Link.search(@query).where(company: @company)
-      elsif @action == "search_by_hashtag"
+      elsif @action == "search_by_link_hashtag"
         links = []
         @company.links.each do |link|
           link.hashtags.each do |hashtag|
@@ -20,7 +20,7 @@ module LinkModule
       else
         links = @company.links
       end
-
+ 
       response = "*Links* \n\n"
       links.each do |f|
         response += "*#{f.id}* - "
