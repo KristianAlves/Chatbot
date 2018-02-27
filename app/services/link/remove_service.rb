@@ -4,7 +4,7 @@ module LinkModule
       # TODO: identify origin and set company
       @company = Company.last
       @params = params
-      @id = params["id_link"]
+      @id = params["id"]
     end
 
     def call

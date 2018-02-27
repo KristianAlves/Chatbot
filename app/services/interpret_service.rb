@@ -5,11 +5,9 @@ class InterpretService
     ## Faq Module 
     when "list", "search", "search_by_hashtag"
       FaqModule::ListService.new(params, action).call()
-    when "roster", "search_link", "search_by_link_hashtag"
-      FaqModule::RosterService.new(params, action).call()
-    when "create", "create_link"
+    when "create"
       FaqModule::CreateService.new(params).call()
-    when "remove", "remove_link"
+    when "remove"
       FaqModule::RemoveService.new(params).call()
 
 
