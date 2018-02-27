@@ -2,7 +2,9 @@ class HelpService
   def self.call
     response  = "*O que eu sei fazer :raised_hands:* \n\n"
     response += "*help*\n"
-    response += ">Lista de comandos que eu conheço\n\n"
+    
+    ## FAQ
+    response += ">Lista de comandos que eu conheço sobre o FAQ\n\n"
     response += "*Adicione ao Faq*\n"
     response += ">Adiciona uma nova questão ao Faq\n\n"
     response += "*Remova ID*\n"
@@ -13,6 +15,8 @@ class HelpService
     response += ">Lista as perguntas e respostas com aquela hashtag\n\n"
     response += "*Perguntas e Respostas*\n"
     response += ">Mostra a lista de perguntas e respostas\n\n"
+
+    ## Links
     response += "*Adicionar link*\n"
     response += ">Adiciona um novo link para o Agregador de Links\n\n"
     response += "*Remova link ID*\n"
