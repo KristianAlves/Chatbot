@@ -5,7 +5,7 @@ module LinkModule
       @company = Company.last
       @description = params["description-original"]
       @link = params["link-original"]
-      @hashtags = params["hashtags-link-original"]
+      @hashtags = params["hashtags-original"]
     end
 
     def call
