@@ -4,4 +4,5 @@ class Company < ActiveRecord::Base
   has_many :faqs
   has_many :links
   has_many :hashtags
+  has_many :tags
 end

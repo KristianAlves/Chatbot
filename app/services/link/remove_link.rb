@@ -1,5 +1,5 @@
 module LinkModule
-  class RemoveService
+  class RemoveLink
     def initialize(params)
       # TODO: identify origin and set company
       @company = Company.last
@@ -13,7 +13,7 @@ module LinkModule
       
       Link.transaction do
         # Deleta as tags associadas que não estejam associadas a outros links
-        link.hashtags.each do |h|
+        link.tags.each do |h|
           if h.links.count <= 1
             h.delete
           end

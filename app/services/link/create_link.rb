@@ -1,20 +1,19 @@
 module LinkModule
-  class CreateService
+  class CreateLink
     def initialize(params)
       # TODO: identify origin and set company
       @company = Company.last
       @description = params["description-original"]
       @link = params["link-original"]
-      @hashtags = params["hashtags-original"]
+      @tags = params["tags-original"]
     end
 
     def call
-      return 'Hashtag Obrigatória' if @hashtags == nil
+      return "Tag Obrigatória" if @tags == nil
       Link.transaction do
         link = Link.create(description: @description, link: @link, company: @company)
-        return "Hashtag Obrigatória" if @hashtags == nil
-        @hashtags.split(/[\s,]+/).each do |hashtag|
-          link.hashtags << Hashtag.create(name: hashtag)
+        @tags.split(/[\s,]+/).each do |tag|
+          link.tags << Tag.create(name: tag)
         end
       end
       "Criado com sucesso"
